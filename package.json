@@ -13,7 +13,9 @@
     "lint": "next lint",
     "build-ui": "rollup -c",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "serve-storybook": "serve storybook-static",
+    "start-storybook": "start-storybook -p 6006 -s public"
   },
   "peerDependencies": {
     "antd": "5.22.4",
