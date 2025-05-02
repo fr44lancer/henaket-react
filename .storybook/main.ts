@@ -2,6 +2,7 @@ import type { StorybookConfig } from '@storybook/nextjs'
 
 const config: StorybookConfig = {
   stories: [
+    '../src/stories/Welcome.stories.tsx',
     '../src/stories/**/*.mdx',
     '../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'
   ],
@@ -11,9 +12,6 @@ const config: StorybookConfig = {
     '@chromatic-com/storybook',
     '@storybook/experimental-addon-test'
   ],
-  docs: {
-    autodocs: 'tag'
-  },
   framework: {
     name: '@storybook/nextjs',
     options: {}
