@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+@layer base {
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-[32px] lg:text-4xl xl:text-5xl font-bold !leading-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-[40px] font-semibold !leading-relaxed;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold leading-snug;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl lg:text-2xl font-semibold;
+  }
+
+  h5 {
+    @apply text-base md:text-lg lg:text-xl font-semibold !leading-relaxed;
+  }
+
+  h6 {
+    @apply text-sm md:text-base font-semibold !leading-normal;
+  }
+
+  a {
+    @apply text-primary cursor-pointer font-normal outline-none underline underline-offset-[3px] transition-shadow
+    hover:decoration-[3px]
+    focus:!text-white focus:bg-accessibility focus:shadow-accessibilityOutline focus:animate-accessibility-outline-pulse;
+  }
+
+  button,
+  input,
+  textarea {
+    @apply outline-none transition-shadow focus:shadow-accessibilityOutline focus:animate-accessibility-outline-pulse;
+  }
+
+  .app-button {
+    @apply rounded border-2
+    w-full md:w-auto no-underline flex items-center justify-center transition-[background-color,border-color,box-shadow];
+  }
+
+
+
+  .app-button > span {
+    @apply no-underline focus:text-text-800;
+  }
+
+  .app-button.start {
+    @apply bg-button-default text-white border-button-stroke
+    hover:bg-button-hover
+    active:bg-button-active;
+  }
+
+  .app-button.primary {
+    @apply bg-primary text-white border-blue-600
+    hover:bg-blue-900
+    active:bg-blue-1000 active:border-blue-1100;
+  }
+
+  .app-button.secondary {
+    @apply bg-blue-200 text-text-800 border-blue-700
+    hover:bg-blue-300 hover:border-blue-900
+    active:bg-blue-500 active:border-blue-1200 focus:!text-text-800;
+  }
+
+/* Hide AppFooter when body has 'd3tree-fullscreen' class */
+body.d3tree-fullscreen .app-footer {
+  display: none !important;
+}
+
+  .app-button.outlined {
+    @apply bg-text-100 text-text-800 border-text-400
+    hover:bg-text-200 hover:border-text-700
+    active:bg-text-300 active:border-text-800;
+  }
+
+  .app-button.icon {
+    @apply border-none bg-transparent text-text-800
+    hover:bg-black/10 active:bg-black/15;
+  }
+
+  .app-button.floating {
+    @apply rounded-full border-text-400 bg-text-100 text-text-800
+    hover:bg-blue-300 active:bg-blue-500;
+  }
+
+  .app-button.toTop {
+    @apply bg-blue-100 text-blue-1200 border-blue-1100
+    hover:bg-blue-200
+    active:bg-blue-300;
+  }
+
+  .app-button.yesem {
+    @apply bg-yesem-primary text-white border-yesem-blue-600
+    hover:bg-blue-900
+    active:bg-blue-1000 active:border-blue-1100;
+  }
+
+  .app-button.regular {
+    @apply text-sm px-3 md:px-4 py-2;
+  }
+
+  .app-button.regular.icon,
+  .app-button.regular.floating {
+    @apply text-sm p-1 md:p-2;
+  }
+
+  .app-button.large {
+    @apply text-base font-bold leading-tight px-3 md:px-4 py-3;
+  }
+
+  .app-button.large.icon,
+  .app-button.large.floating {
+    @apply text-base font-bold p-4;
+  }
+
+  .static-page .wysiwyg {
+    line-height: 1.5;
+    --tw-text-opacity: 1;
+    color: rgb(69 69 69 / var(--tw-text-opacity));
+  }
+
+  .static-page .wysiwyg ul {
+    list-style-position: outside;
+    list-style-type: disc;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+    padding-left: 1.5rem;
+  }
+
+  .static-page .wysiwyg p {
+    margin-bottom: 16px
+  }
+
+  .static-page .wysiwyg h4 {
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+  }
+
+
+  .static-page .wysiwyg ul ::marker {
+    color: #ff6a38;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f7f4ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #919090;
+    border-radius: 100vh;
+    border: 1px solid #f6f7ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #535353;
+  }
+}
+
+/* Base box styling */
+.ant-notification-notice {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon container */
+.custom-notification-icon {
+  width: 56px;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  font-size: 24px;
+}
+
+/* Content area */
+.custom-notification-content {
+  padding: 12px 16px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.ant-notification-notice-content {
+  width: 100%;
+}
+
+.ant-notification-notice-message {
+margin-bottom: 0 !important;
+}
+
+.ant-notification-notice-description {
+  color: inherit;
+
+  width: 100%;
+}
+
+.ant-notification-notice-close {
+  top: 8px;
+  right: 8px;
+}
+
+
+
+.app-switch.ant-switch-checked .ant-switch-handle {
+  background: #fff;
+  border-radius: 100% ;
+  padding: 2px;
+}
+
+
+.app-switch.ant-switch-checked .ant-switch-handle::before {
+  background: #004D99;
+  padding: 2px;
+  width: 4px;
+  margin: 6px auto;
+}
+
+
+
+.app-switch:not(.ant-switch-checked) .ant-switch-handle {
+  background-color: #fff;
+  border-radius: 100% ;
+  padding: 2px;
+}
+
+.app-switch:not(.ant-switch-checked) .ant-switch-handle::before {
+  background-color: #f0f0f0;
+  border: 2px solid #888;
+  margin: 6px;
+}
+
+
