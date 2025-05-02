@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react'
 import { ConfigProvider } from 'antd'
-import '@/src/app/globals.css'
+import '@/src/assets/styles/globals.css'
 import Variables from '@/src/assets/styles/variables'
 import React from 'react'
 import { notoSans } from '@/src/assets/styles/fonts'

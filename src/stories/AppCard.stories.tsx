@@ -46,7 +46,10 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     type: 'default',
-    children: 'Default Link'
+    children: 'Default Link',
+    title: 'Heading',
+    description: 'Description text text text text text text text text text text text text text ...',
+    linkDescription: 'Link Description'
   }
 }
 

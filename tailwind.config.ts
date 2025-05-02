@@ -6,9 +6,11 @@ module.exports = {
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}'
+    './src/**/*.{ts,tsx}',
+    '.storybook/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   prefix: '',
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
       sans: ['"Noto Sans"', '"Noto Sans Armenian"', 'Arial'],
