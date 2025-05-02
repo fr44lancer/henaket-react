@@ -10,6 +10,7 @@ import { AppAccordion } from '@/src/components/henaket/Accordion'
 import { AppAccordionGroup } from '@/src/components/henaket/AppAccordionGroup'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import { Col, Row, Segmented, Space } from 'antd'
+import { AppTable } from '@/src/components/henaket/AppTable'
 
 const accordionItems = [
   {
@@ -57,7 +58,8 @@ const AntdKit: React.FC = () => {
           'Inputs',
           'Labels',
           'Alerts',
-          'Accordions'
+          'Accordions',
+          'Tables'
         ]}
         value={view}
         onChange={val => setView(val as string)}
@@ -378,6 +380,44 @@ const AntdKit: React.FC = () => {
               />
             </Col>
           </>
+        )}
+
+        {view === 'Tables' && (
+          <Col xs={24}>
+            <Space direction="vertical" size="large">
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Default Table</h3>
+                <AppTable
+                  dataSource={[
+                    { key: '1', name: 'John Brown', age: 32, address: 'New York No. 1 Lake Park' },
+                    { key: '2', name: 'Jim Green', age: 42, address: 'London No. 1 Lake Park' },
+                    { key: '3', name: 'Joe Black', age: 32, address: 'Sydney No. 1 Lake Park' },
+                  ]}
+                  columns={[
+                    { title: 'Name', dataIndex: 'name', key: 'name' },
+                    { title: 'Age', dataIndex: 'age', key: 'age' },
+                    { title: 'Address', dataIndex: 'address', key: 'address' },
+                  ]}
+                />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Compact Table</h3>
+                <AppTable
+                  variant="compact"
+                  dataSource={[
+                    { key: '1', name: 'John Brown', age: 32, address: 'New York No. 1 Lake Park' },
+                    { key: '2', name: 'Jim Green', age: 42, address: 'London No. 1 Lake Park' },
+                    { key: '3', name: 'Joe Black', age: 32, address: 'Sydney No. 1 Lake Park' },
+                  ]}
+                  columns={[
+                    { title: 'Name', dataIndex: 'name', key: 'name' },
+                    { title: 'Age', dataIndex: 'age', key: 'age' },
+                    { title: 'Address', dataIndex: 'address', key: 'address' },
+                  ]}
+                />
+              </div>
+            </Space>
+          </Col>
         )}
       </Row>
     </div>

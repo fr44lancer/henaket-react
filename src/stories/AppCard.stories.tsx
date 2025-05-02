@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { AppLink } from '@/src/components/henaket/AppLink'
 import { MainShopCard } from '@/src/components/henaket/Cards/MainShopCard'
+import { AppCard } from '@/src/components/henaket/AppCard'
+import { InfoCircleOutlined } from '@ant-design/icons'
 
 const meta = {
   title: 'Henaket/Card',
@@ -83,4 +85,52 @@ export const External: Story = {
     target: '_blank',
     external: true
   }
+}
+
+const imageUrl = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80'
+
+export const WithLabel: Story = {
+  args: {
+    label: 'ՆՈՐՈՒԹՅՈՒՆ',
+    title: 'Գինավոր',
+    subtitle: 'Բացվել է սրահը',
+    description: 'Կարող է կիրառվել քաղաքում գտնվող խանութի և շենքի համար:',
+  },
+}
+
+export const WithLabelAndImage: Story = {
+  args: {
+    label: 'ՆՈՐՈՒԹՅՈՒՆ',
+    title: 'Գինավոր',
+    subtitle: 'Բացվել է սրահը',
+    description: 'Կարող է կիրառվել քաղաքում գտնվող խանութի և շենքի համար:',
+    image: imageUrl,
+    variant: 'withImage',
+  },
+}
+
+export const Plain: Story = {
+  args: {
+    title: 'Գինավոր',
+    subtitle: 'Բացվել է սրահը',
+    description: 'Կարող է կիրառվել քաղաքում գտնվող խանութի և շենքի համար:',
+  },
+}
+
+export const PlainWithImage: Story = {
+  args: {
+    title: 'Գինավոր',
+    subtitle: 'Բացվել է սրահը',
+    image: imageUrl,
+    variant: 'withImage',
+  },
+}
+
+export const WithIcon: Story = {
+  args: {
+    title: 'Գինավոր',
+    subtitle: 'Բացվել է սրահը',
+    variant: 'withIcon',
+    icon: <InfoCircleOutlined />,
+  },
 }
