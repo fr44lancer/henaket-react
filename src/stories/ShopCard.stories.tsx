@@ -63,4 +63,46 @@ export const CustomLinks: Story = {
       { text: 'Second custom link', href: '#' },
     ],
   },
+};
+
+export const ServicesSection: Story = {
+  render: () => (
+    <div className="w-full max-w-5xl mx-auto">
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-blue-900 mb-1">Services</h2>
+        <p className="text-gray-700 text-base max-w-2xl">
+          A maximum 3 line statement to summarise the activity or policy goal of the ministry.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ShopCard
+          icon={<MessageOutlined />}
+          title="A four service group name, maximum 2 lines of text recommended so titles have room."
+          description="Supportive text for explaining the window card. Maximum 2 lines of text recommended so that the card stays compact."
+          links={[
+            { text: 'Top service name goes here (1 line)', href: '#' },
+            { text: 'Top service name goes here (1 line)', href: '#' },
+          ]}
+        />
+        <ShopCard
+          icon={<ShopOutlined />}
+          title="A very very longer service group name, maximum 2 lines of text recommended so titles have room."
+          description="Supportive text for explaining the window card. Maximum 2 lines of text recommended so that the card stays compact."
+          links={[
+            { text: 'Top service name goes here (1 line)', href: '#' },
+            { text: 'Top service name goes here (1 line)', href: '#' },
+          ]}
+        />
+        <ShopCard
+          icon={<InfoCircleOutlined />}
+          title="Top service name goes here (1 line)"
+          description="Supportive text for explaining the window card. Maximum 2 lines of text recommended so that the card stays compact."
+          links={[
+            { text: 'Top service name goes here (1 line)', href: '#' },
+            { text: 'Top service name goes here (1 line)', href: '#' },
+          ]}
+        />
+      </div>
+    </div>
+  ),
 }; 
