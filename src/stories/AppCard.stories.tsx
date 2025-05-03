@@ -2,135 +2,108 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { AppLink } from '@/src/components/henaket/AppLink'
 import { MainShopCard } from '@/src/components/henaket/Cards/MainShopCard'
 import { AppCard } from '@/src/components/henaket/AppCard'
-import { InfoCircleOutlined } from '@ant-design/icons'
+import { UserOutlined, ShoppingCartOutlined, StarOutlined } from '@ant-design/icons'
 
 const meta = {
-  title: 'Henaket/Card',
-  component: MainShopCard,
+  title: 'Henaket/Cards/InfoCard',
+  component: AppCard,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered'
   },
-  args: {
-    href: '/',
-    children: 'Click Me',
-    type: 'default',
-    external: false,
-    target: '_self'
-  },
   argTypes: {
-    href: {
-      control: 'text'
-    },
-    children: {
-      control: 'text'
-    },
-    target: {
+    variant: {
       control: 'select',
-      options: ['_self', '_blank']
+      options: ['default', 'withImage', 'withIcon'],
     },
-    type: {
-      control: 'select',
-      options: ['default', 'footer', 'light', 'disabled']
+    label: {
+      control: 'text',
     },
-    external: {
-      control: 'boolean'
+    title: {
+      control: 'text',
+    },
+    subtitle: {
+      control: 'text',
+    },
+    description: {
+      control: 'text',
     },
     className: {
-      control: 'text'
-    }
+      control: 'text',
+    },
   }
-} satisfies Meta<typeof AppLink>
+} satisfies Meta<typeof AppCard>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof AppCard>
 
 export const Default: Story = {
   args: {
-    type: 'default',
-    children: 'Default Link',
-    title: 'Heading',
-    description: 'Description text text text text text text text text text text text text text ...',
-    linkDescription: 'Link Description'
+    title: 'Default Card',
+    subtitle: 'This is a subtitle',
+    description: 'This is a description of the card content.',
   }
 }
-
-export const Footer: Story = {
-  args: {
-    type: 'footer',
-    children: 'Footer Link'
-  }
-}
-
-export const Light: Story = {
-  args: {
-    type: 'light',
-    children: 'Light Link'
-  }
-}
-
-export const Disabled: Story = {
-  args: {
-    type: 'disabled',
-    children: 'Disabled Link',
-    href: '#'
-  }
-}
-
-export const External: Story = {
-  args: {
-    type: 'default',
-    children: 'External Link',
-    href: 'https://example.com',
-    target: '_blank',
-    external: true
-  }
-}
-
-const imageUrl = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80'
 
 export const WithLabel: Story = {
   args: {
-    label: 'ՆՈՐՈՒԹՅՈՒՆ',
-    title: 'Գինավոր',
-    subtitle: 'Բացվել է սրահը',
-    description: 'Կարող է կիրառվել քաղաքում գտնվող խանութի և շենքի համար:',
-  },
+    label: 'NEW',
+    title: 'Card with Label',
+    subtitle: 'Featured Product',
+    description: 'This card has a label to highlight important information.',
+  }
 }
 
-export const WithLabelAndImage: Story = {
+export const WithImage: Story = {
   args: {
-    label: 'ՆՈՐՈՒԹՅՈՒՆ',
-    title: 'Գինավոր',
-    subtitle: 'Բացվել է սրահը',
-    description: 'Կարող է կիրառվել քաղաքում գտնվող խանութի և շենքի համար:',
-    image: imageUrl,
     variant: 'withImage',
-  },
-}
-
-export const Plain: Story = {
-  args: {
-    title: 'Գինավոր',
-    subtitle: 'Բացվել է սրահը',
-    description: 'Կարող է կիրառվել քաղաքում գտնվող խանութի և շենքի համար:',
-  },
-}
-
-export const PlainWithImage: Story = {
-  args: {
-    title: 'Գինավոր',
-    subtitle: 'Բացվել է սրահը',
-    image: imageUrl,
-    variant: 'withImage',
-  },
+    image: 'https://picsum.photos/300/200',
+    title: 'Card with Image',
+    subtitle: 'Image Card Example',
+    description: 'This card includes an image at the top.',
+  }
 }
 
 export const WithIcon: Story = {
   args: {
-    title: 'Գինավոր',
-    subtitle: 'Բացվել է սրահը',
     variant: 'withIcon',
-    icon: <InfoCircleOutlined />,
-  },
+    icon: <UserOutlined />,
+    title: 'User Profile',
+    subtitle: 'Personal Information',
+    description: 'This card has an icon in the footer section.',
+  }
+}
+
+export const MultipleExamples: Story = {
+  render: () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <AppCard
+        label="FEATURED"
+        title="Premium Service"
+        subtitle="Best Value"
+        description="Get access to all premium features and benefits."
+      />
+      <AppCard
+        variant="withImage"
+        image="https://picsum.photos/300/200"
+        title="Product Showcase"
+        subtitle="New Arrival"
+        description="Check out our latest product collection."
+      />
+      <AppCard
+        variant="withIcon"
+        icon={<ShoppingCartOutlined />}
+        title="Shopping Cart"
+        subtitle="Your Items"
+        description="View and manage your shopping cart items."
+      />
+      <AppCard
+        variant="withIcon"
+        icon={<StarOutlined />}
+        title="Customer Reviews"
+        subtitle="Top Rated"
+        description="Read what our customers say about us."
+      />
+    </div>
+  ),
 }
