@@ -3,7 +3,7 @@ import { AppTable } from '@/src/components/henaket/AppTable';
 import { useState } from 'react';
 
 const meta: Meta<typeof AppTable> = {
-  title: 'Henaket/AppTable',
+  title: 'Henaket/Table',
   component: AppTable,
   parameters: {
     layout: 'centered',

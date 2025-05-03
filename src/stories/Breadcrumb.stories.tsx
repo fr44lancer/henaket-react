@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AppBreadcrumb, AppBreadcrumbProps } from '@/src/components/henaket/AppBreadcrumb';
 
 const meta: Meta<typeof AppBreadcrumb> = {
-  title: 'Henaket/AppBreadcrumb',
+  title: 'Henaket/Breadcrumb',
   component: AppBreadcrumb,
   parameters: {
     layout: 'centered',

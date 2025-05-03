@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AppFeedback, AppFeedbackForm, AppFeedbackThankYou } from '@/src/components/henaket/AppFeedback';
 
 const meta: Meta<typeof AppFeedback> = {
-  title: 'Henaket/AppFeedback',
+  title: 'Henaket/Feedback',
   component: AppFeedback,
   parameters: {
     layout: 'centered',
