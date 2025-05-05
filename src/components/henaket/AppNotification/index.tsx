@@ -34,6 +34,7 @@ export const showCustomNotification = (
   title: string,
   description: string
 ) => {
+  console.log(88)
   const { icon, background, iconBg } = configMap[type]
 
   notification.open({
