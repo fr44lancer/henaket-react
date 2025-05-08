@@ -1,8 +1,7 @@
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { AppLabel } from '../../henaket/AppLabel';
 import { Flex } from 'antd';
-import { AppIcon } from '../../henaket/AppIcon';
-import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusOutlined, PlusOutlined, RightOutlined } from '@ant-design/icons';
 
 export interface AppAccordionProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -128,11 +127,7 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
               >
                 <p className={'text-white'}>{actionButtonLink.display_text}</p>
                 {actionButtonIcon && (
-                  <AppIcon
-                    icon={'chevron_right'}
-                    size={'30px'}
-                    className={'text-white'}
-                  />
+                  <RightOutlined size={30} className={'text-white'} />
                 )}
               </Flex>
             )}

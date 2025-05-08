@@ -1,42 +1,43 @@
-import React from 'react'
-import { notification } from 'antd'
+import React from 'react';
+import { notification } from 'antd';
 import {
   CheckCircleOutlined,
   CloseCircleOutlined,
   InfoCircleOutlined,
-  WarningOutlined
-} from '@ant-design/icons'
-import theme from '../../../assets/styles/theme'
+  WarningOutlined,
+} from '@ant-design/icons';
+import theme from '../../../assets/styles/theme';
 
 const configMap = {
   success: {
     icon: <CheckCircleOutlined />,
     background: theme.colors.systemSuccessLight,
-    iconBg: theme.colors.systemSuccess
+    iconBg: theme.colors.systemSuccess,
   },
   error: {
     icon: <CloseCircleOutlined />,
     background: theme.colors.systemErrorLight,
-    iconBg: theme.colors.systemError
+    iconBg: theme.colors.systemError,
   },
   warning: {
     icon: <WarningOutlined />,
     background: theme.colors.systemWarningLight,
-    iconBg: theme.colors.systemWarning
+    iconBg: theme.colors.systemWarning,
   },
   info: {
     icon: <InfoCircleOutlined />,
     background: theme.colors.systemInfoLight,
-    iconBg: theme.colors.systemInfo
-  }
-}
+    iconBg: theme.colors.systemInfo,
+  },
+};
 export const showCustomNotification = (
   type: keyof typeof configMap,
   title: string,
-  description: string
+  description: string,
 ) => {
-  console.log(88)
-  const { icon, background, iconBg } = configMap[type]
+  console.log(88);
+
+  const { icon, background, iconBg } = configMap[type];
 
   notification.open({
     message: null,
@@ -57,11 +58,10 @@ export const showCustomNotification = (
         </div>
       </div>
     ),
-    duration: 0,
     style: {
       padding: 0,
       background: 'transparent',
-      boxShadow: 'none'
-    }
-  })
-}
+      boxShadow: 'none',
+    },
+  });
+};

@@ -10,7 +10,7 @@ import Header from '../components/features/Header';
 import Footer from '../components/features/Footer';
 
 const meta: Meta = {
-  title: 'Henaket/Patterns/ExamplePage1',
+  title: 'Dzevanmush/ExamplePage1',
   parameters: {
     layout: 'fullscreen',
   },

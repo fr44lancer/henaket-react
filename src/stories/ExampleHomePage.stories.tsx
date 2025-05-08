@@ -10,7 +10,8 @@ import {
 } from '@ant-design/icons';
 
 const meta: Meta = {
-  title: 'Henaket/Patterns/ExampleHomePage',
+  title: 'Dzevanmush/HomePagev1',
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

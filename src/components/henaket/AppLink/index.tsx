@@ -1,14 +1,14 @@
-import React, { ReactNode } from 'react'
-import NextLink, { LinkProps } from 'next/link'
-import {AppIcon} from "../AppIcon";
+import React, { ReactNode } from 'react';
+import NextLink, { LinkProps } from 'next/link';
+import { ExportOutlined } from '@ant-design/icons';
 
 export type IAppLinkProps = {
-  children?: ReactNode
-  className?: string
-  target?: string
-  external?: boolean
-  type?: 'default' | 'footer' | 'light' | 'disabled'
-} & LinkProps
+  children?: ReactNode;
+  className?: string;
+  target?: string;
+  external?: boolean;
+  type?: 'default' | 'footer' | 'light' | 'disabled';
+} & LinkProps;
 
 const typeClassMap: Record<NonNullable<IAppLinkProps['type']>, string> = {
   default:
@@ -17,8 +17,8 @@ const typeClassMap: Record<NonNullable<IAppLinkProps['type']>, string> = {
     'text-800 hover:text-link-active focus:text-white active:text-white visited:text-link-visited underline' +
     ' decoration-[1px]',
   light: 'text-white hover:text-link-visited underline decoration-[1px]',
-  disabled: 'text-700 cursor-not-allowed no-underline pointer-events-none'
-}
+  disabled: 'text-700 cursor-not-allowed no-underline pointer-events-none',
+};
 
 export const AppLink = ({
   children,
@@ -28,7 +28,7 @@ export const AppLink = ({
   type = 'default',
   ...props
 }: IAppLinkProps) => {
-  const typeClasses = typeClassMap[type] || typeClassMap.default
+  const typeClasses = typeClassMap[type] || typeClassMap.default;
   return (
     <NextLink
       {...props}
@@ -36,13 +36,7 @@ export const AppLink = ({
       className={`${typeClasses} inline ${className}`}
     >
       {children}
-      {external && (
-        <AppIcon
-          icon={'open_in_new'}
-          size={'12'}
-          className="ml-1 inline-block"
-        />
-      )}
+      {external && <ExportOutlined size={16} className="ml-1 " />}
     </NextLink>
-  )
-}
+  );
+};

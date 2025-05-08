@@ -6,7 +6,7 @@ import { ShopCard } from '../components/henaket/Cards/ShopCard';
 import { MessageOutlined, ShopOutlined } from '@ant-design/icons';
 
 const meta: Meta = {
-  title: 'Henaket/Patterns/ExampleServicePage',
+  title: 'Dzevanmush/ServicePage',
   parameters: {
     layout: 'fullscreen',
   },

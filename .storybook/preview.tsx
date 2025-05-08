@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
-import { ConfigProvider } from 'antd';
+import { App, ConfigProvider } from 'antd';
 import antdTheme from '../src/assets/styles/antd.theme';
 import Variables from '../src/assets/styles/variables';
 import '../src/assets/styles/globals.css';
@@ -18,10 +18,12 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <ConfigProvider theme={antdTheme}>
-        <div className="min-w-4xl mx-auto p-4 ">
-          <Variables fontFamily={notoSans.style.fontFamily} />
-          <Story />
-        </div>
+        <App>
+          <div className="min-w-4xl mx-auto p-4 ">
+            <Variables fontFamily={notoSans.style.fontFamily} />
+            <Story />
+          </div>
+        </App>
       </ConfigProvider>
     ),
   ],

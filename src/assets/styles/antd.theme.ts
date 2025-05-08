@@ -1,5 +1,5 @@
-import { ThemeConfig } from 'antd'
-import theme from '../styles/theme'
+import { ThemeConfig } from 'antd';
+import theme from '../styles/theme';
 
 const antdTheme: ThemeConfig = {
   token: {
@@ -65,7 +65,7 @@ const antdTheme: ThemeConfig = {
 
     motionEaseOut: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
 
-    colorFillAlter: theme.colors.blue100
+    colorFillAlter: theme.colors.blue100,
   },
 
   components: {
@@ -92,7 +92,7 @@ const antdTheme: ThemeConfig = {
       colorErrorBorder: theme.colors.systemError,
       colorErrorBorderHover: theme.colors.systemError,
       colorErrorOutline: theme.colors.systemError,
-      errorActiveShadow: 'none'
+      errorActiveShadow: 'none',
     },
 
     Segmented: {
@@ -103,20 +103,26 @@ const antdTheme: ThemeConfig = {
       itemColor: theme.colors.gray1200,
       borderRadius: 8,
       itemHoverBg: theme.colors.gray300,
-      itemActiveBg: theme.colors.gray300
+      itemActiveBg: theme.colors.gray300,
     },
 
     Pagination: {
-      colorBgTextActive: theme.colors.gray300,
-      colorBgTextHover: theme.colors.gray300,
+      colorBgTextActive: theme.colors.backgroundWhite,
+      colorBgTextHover: theme.colors.primary,
+      colorBorder: theme.colors.primary,
+      colorPrimaryBorder: theme.colors.primary,
+      colorBorderSecondary: theme.colors.primary,
       borderRadius: 4,
-      itemSize: 64,
+      itemSize: 40,
       fontSize: 18,
       fontWeightStrong: 400,
-      colorPrimary: theme.colors.orangeMain,
-      colorPrimaryHover: theme.colors.orangeMain,
-      colorPrimaryBorder: theme.colors.orangeMain,
-      colorText: theme.colors.gray1200
+      colorBgBase: theme.colors.primary,
+      itemBg: theme.colors.blue400,
+      itemActiveBg: theme.colors.primary,
+      controlItemBgHover: theme.colors.blue300,
+      colorPrimary: theme.colors.backgroundWhite,
+      colorPrimaryHover: theme.colors.backgroundWhite,
+      colorText: theme.colors.gray800,
     },
 
     Select: {
@@ -140,7 +146,7 @@ const antdTheme: ThemeConfig = {
       optionPadding: '8px 8px',
       colorTextQuaternary: theme.colors.gray800,
       colorIcon: theme.colors.gray800,
-      colorIconHover: theme.colors.gray800
+      colorIconHover: theme.colors.gray800,
     },
 
     Checkbox: {
@@ -150,7 +156,7 @@ const antdTheme: ThemeConfig = {
       fontSize: 16,
       lineHeight: 1.5,
       borderRadiusSM: 2,
-      colorBorder: theme.colors.gray800
+      colorBorder: theme.colors.gray800,
     },
 
     Input: {
@@ -172,7 +178,7 @@ const antdTheme: ThemeConfig = {
       colorErrorBorderHover: theme.colors.systemError,
       colorErrorOutline: theme.colors.systemError,
       activeShadow: 'none',
-      errorActiveShadow: 'none'
+      errorActiveShadow: 'none',
     },
 
     InputNumber: {
@@ -194,7 +200,7 @@ const antdTheme: ThemeConfig = {
       colorErrorBorderHover: theme.colors.systemError,
       colorErrorOutline: theme.colors.systemError,
       activeShadow: 'none',
-      errorActiveShadow: 'none'
+      errorActiveShadow: 'none',
     },
 
     Radio: {
@@ -212,7 +218,7 @@ const antdTheme: ThemeConfig = {
       controlHeight: 52,
       colorPrimaryHover: theme.colors.primary,
       motionDurationSlow: '0s',
-      buttonCheckedBg: theme.colors.secondary
+      buttonCheckedBg: theme.colors.secondary,
     },
 
     Form: {
@@ -221,7 +227,7 @@ const antdTheme: ThemeConfig = {
       labelColor: theme.colors.gray1200,
       labelRequiredMarkColor: theme.colors.systemError,
       colorTextDescription: theme.colors.gray800,
-      labelFontSize: 20
+      labelFontSize: 20,
     },
 
     List: {
@@ -230,7 +236,7 @@ const antdTheme: ThemeConfig = {
       borderRadiusLG: 4,
       itemPadding: '16px 0',
       paddingLG: 12,
-      fontSize: 16
+      fontSize: 16,
     },
 
     Modal: {
@@ -240,7 +246,7 @@ const antdTheme: ThemeConfig = {
       titleColor: theme.colors.gray1200,
       colorIcon: theme.colors.gray800,
       colorIconHover: theme.colors.gray800,
-      fontWeightStrong: 500
+      fontWeightStrong: 500,
     },
 
     Dropdown: {
@@ -253,11 +259,11 @@ const antdTheme: ThemeConfig = {
       controlItemBgHover: theme.colors.backgroundWhite,
       fontSize: 16,
       lineHeight: 1.5,
-      colorPrimary: theme.colors.gray800
+      colorPrimary: theme.colors.gray800,
     },
 
     Avatar: {
-      colorTextPlaceholder: theme.colors.backgroundWhite
+      colorTextPlaceholder: theme.colors.backgroundWhite,
     },
 
     Badge: {
@@ -267,7 +273,7 @@ const antdTheme: ThemeConfig = {
       paddingXS: 4,
       lineWidth: 0,
       colorError: theme.colors.systemError,
-      colorErrorHover: theme.colors.systemErrorLight
+      colorErrorHover: theme.colors.systemErrorLight,
     },
 
     Collapse: {
@@ -277,7 +283,7 @@ const antdTheme: ThemeConfig = {
       fontSize: 20,
       colorText: theme.colors.gray1200,
       colorTextHeading: theme.colors.gray1200,
-      borderRadiusLG: 4
+      borderRadiusLG: 4,
     },
 
     Progress: {
@@ -288,7 +294,7 @@ const antdTheme: ThemeConfig = {
       borderRadius: 2,
       borderRadiusLG: 2,
       borderRadiusSM: 2,
-      lineBorderRadius: 4
+      lineBorderRadius: 4,
     },
 
     Carousel: {
@@ -296,7 +302,7 @@ const antdTheme: ThemeConfig = {
       dotHeight: 12,
       dotActiveWidth: 12,
       dotWidth: 12,
-      dotOffset: -40
+      dotOffset: -40,
     },
     Button: {
       colorPrimary: theme.colors.primary, // base primary blue
@@ -312,11 +318,11 @@ const antdTheme: ThemeConfig = {
       fontSize: 14,
       boxShadow: 'none',
       defaultShadow: '0 0 0 rgba(0,0,0,0.02)',
-      primaryShadow: '0 0 0 rgba(0,0,0,0.02)'
+      primaryShadow: '0 0 0 rgba(0,0,0,0.02)',
     },
     Alert: {
       borderRadius: 0,
-      borderRadiusLG: 0
+      borderRadiusLG: 0,
     },
     Typography: {
       titleMarginTop: 0,
@@ -331,7 +337,7 @@ const antdTheme: ThemeConfig = {
       fontSizeHeading3: 24,
       lineHeightHeading3: 1.6,
       fontSizeHeading4: 20,
-      lineHeightHeading4: 1.6
+      lineHeightHeading4: 1.6,
     },
     Tag: {
       colorText: '#595959',
@@ -342,7 +348,7 @@ const antdTheme: ThemeConfig = {
       lineHeight: 1.5,
       borderRadius: 0,
       borderRadiusLG: 0,
-      borderRadiusSM: 0
+      borderRadiusSM: 0,
     },
     Notification: {
       colorSuccessBg: '#f6ffed',
@@ -355,7 +361,7 @@ const antdTheme: ThemeConfig = {
 
       borderRadiusLG: 0,
       borderRadiusSM: 0,
-      borderRadius: 0
+      borderRadius: 0,
     },
     Tooltip: {
       colorBgSpotlight: '#fff',
@@ -363,7 +369,7 @@ const antdTheme: ThemeConfig = {
       colorBorder: theme.colors.blue800,
       colorBorderBg: theme.colors.text800,
       colorTextLightSolid: theme.colors.text800,
-      borderRadius: 4
+      borderRadius: 4,
     },
     Switch: {
       colorPrimary: '#2b5c8a', // main toggle "on" color
@@ -373,7 +379,7 @@ const antdTheme: ThemeConfig = {
       trackHeight: 34,
       trackMinWidth: 66,
       borderRadius: 100,
-      colorBgContainerDisabled: theme.colors.text500
+      colorBgContainerDisabled: theme.colors.text500,
     },
     Tabs: {
       colorPrimary: '#355C8C', // active indicator line
@@ -385,7 +391,7 @@ const antdTheme: ThemeConfig = {
       horizontalItemGutter: 24,
       horizontalMargin: '0 16px 0 0',
       fontSize: 16,
-      fontWeightStrong: 600
+      fontWeightStrong: 600,
     },
     Table: {
       colorBgContainer: theme.colors.backgroundWhite,
@@ -400,10 +406,10 @@ const antdTheme: ThemeConfig = {
       paddingXS: 8,
       paddingSM: 12,
       paddingLG: 24,
-      margin: 0,
-      marginXS: 0,
-      marginSM: 0,
-      marginLG: 0,
+      margin: 30,
+      marginXS: 30,
+      marginSM: 30,
+      marginLG: 30,
       headerBg: theme.colors.backgroundWhite,
       headerColor: theme.colors.text800,
       headerSplitColor: theme.colors.blue400,
@@ -423,8 +429,9 @@ const antdTheme: ThemeConfig = {
       selectionColumnWidth: 32,
       stickyScrollBarBg: theme.colors.blue400,
       stickyScrollBarBorderRadius: 4,
+      paddingContentVerticalLG: 54,
     },
-  }
-}
+  },
+};
 
-export default antdTheme
+export default antdTheme;

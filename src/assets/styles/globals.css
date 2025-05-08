@@ -34,8 +34,7 @@ html {
   }
 
   a {
-    @apply text-primary cursor-pointer font-normal outline-none underline underline-offset-[3px] transition-shadow
-    hover:decoration-[3px]
+    @apply text-primary cursor-pointer font-normal outline-none
     focus:!text-white focus:bg-accessibility focus:shadow-accessibilityOutline focus:animate-accessibility-outline-pulse;
   }
 
