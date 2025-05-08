@@ -10,14 +10,17 @@ const meta = {
   },
   args: {
     title: 'Example Accordion Title',
-    content:
-      '<p>This is example <strong>accordion content</strong> with HTML.</p>',
-    expanded: false,
+    description: (
+      <p>
+        This is example <strong>accordion description</strong> with HTML.
+      </p>
+    ),
+    expandedDescription: false,
   },
   argTypes: {
     title: { control: 'text' },
-    content: { control: 'text' },
-    expanded: { control: 'boolean' },
+    description: { control: 'text' },
+    expandedDescription: { control: 'boolean' },
     actionVariant: {
       control: 'select',
       options: ['primary', 'secondary', 'outlined'],
@@ -31,7 +34,7 @@ const meta = {
       control: 'object',
       description: 'Optional label before the accordion header',
     },
-    onToggle: {
+    onToggleAccordion: {
       action: 'toggled',
       description: 'Callback triggered on expand/collapse',
     },
@@ -54,15 +57,15 @@ export const WithBadgeOnly: Story = {
   },
 };
 
-export const WithoutContent: Story = {
+export const WithoutDescription: Story = {
   args: {
-    content: '',
+    description: '',
   },
 };
 
-export const ExpandedByDefault: Story = {
+export const expandedDescriptionByDefault: Story = {
   args: {
-    expanded: true,
+    expandedDescription: true,
   },
 };
 

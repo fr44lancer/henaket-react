@@ -1,5 +1,5 @@
 import React from 'react';
-import logoDark from '../../../assets/images/logoDark.svg';
+import { Image } from 'antd';
 
 const Footer: React.FC = () => (
   <footer className="bg-white border-t border-gray-200 py-8 px-4 mt-10">
@@ -44,14 +44,25 @@ const Footer: React.FC = () => (
     </div>
     <div className="mt-8 text-xs text-gray-500 text-center">
       <div className="mb-2">
-        <a href="#" className="underline">Terms and conditions</a> and <a href="#" className="underline">privacy & cookies</a>
+        <a href="#" className="underline">
+          Terms and conditions
+        </a>{' '}
+        and{' '}
+        <a href="#" className="underline">
+          privacy & cookies
+        </a>
       </div>
       <div className="flex justify-center mb-2">
-        <img src={logoDark} alt="Republic of Armenia Logo" className="h-8" />
+        <Image
+          src={'../../../../logoDark.svg'}
+          alt="Republic of Armenia Logo"
+          className="h-8"
+          preview={false}
+        />
       </div>
       <div>© Republic of Armenia, Ministry of Something</div>
     </div>
   </footer>
 );
 
-export default Footer; 
+export default Footer;

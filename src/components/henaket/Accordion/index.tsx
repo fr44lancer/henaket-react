@@ -1,18 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { AppLabel } from '../../henaket/AppLabel';
 import { Flex } from 'antd';
 import { AppIcon } from '../../henaket/AppIcon';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 
-interface AppAccordionProps {
+export interface AppAccordionProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
-  content?: string;
+  description?: ReactNode;
   anchor?: string;
   actionVariant?: 'primary' | 'default' | 'link' | 'text' | 'dashed';
-  actionButtonLink?: { href: string; display_text: string };
+  actionButtonLink?: {
+    href: string;
+    display_text: string;
+  };
   actionButtonIcon?: string;
-  expanded?: boolean;
-  onToggle?: (expanded: boolean) => void;
+  expandedDescription?: boolean;
+  onToggleAccordion?: (expandedDescription: boolean) => void;
   serviceTypeBadge?: {
     background_color: string;
     text_color: string;
@@ -22,41 +26,43 @@ interface AppAccordionProps {
 
 export const AppAccordion: React.FC<AppAccordionProps> = ({
   title,
-  content,
+  description,
   anchor,
   actionVariant = 'primary',
   actionButtonLink,
   actionButtonIcon = 'keyboard_arrow_right',
-  expanded: defaultExpanded = false,
-  onToggle,
+  expandedDescription: defaultexpandedDescription = false,
+  onToggleAccordion,
   serviceTypeBadge,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const [isexpandedDescription, setIsexpandedDescription] = useState(
+    defaultexpandedDescription,
+  );
+  const descriptionRef = useRef<HTMLDivElement>(null);
 
-  const hasContent = !!content;
+  const hasdescription = !!description;
 
   useEffect(() => {
-    if (!contentRef.current) return;
+    if (!descriptionRef.current) return;
 
-    const el = contentRef.current;
-    if (isExpanded) {
+    const el = descriptionRef.current;
+    if (isexpandedDescription) {
       el.style.height = el.scrollHeight + 'px';
       el.style.visibility = 'visible';
     } else {
       el.style.height = '0';
       el.style.visibility = 'hidden';
     }
-  }, [isExpanded]);
+  }, [isexpandedDescription]);
 
   const toggleAccordion = () => {
-    if (!hasContent) return;
-    const next = !isExpanded;
-    setIsExpanded(next);
-    onToggle?.(next);
+    if (!hasdescription) return;
+    const next = !isexpandedDescription;
+    setIsexpandedDescription(next);
+    onToggleAccordion?.(next);
   };
 
-  const showAccordionStatusIndicator = hasContent || !serviceTypeBadge;
+  const showAccordionStatusIndicator = hasdescription || !serviceTypeBadge;
 
   return (
     <article
@@ -65,7 +71,7 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
     >
       <header
         className={`w-full flex border border-text-300 rounded-[3px] ${
-          isExpanded ? 'rounded-b-none' : ''
+          isexpandedDescription ? 'rounded-b-none' : ''
         }`}
       >
         {serviceTypeBadge && (
@@ -76,9 +82,11 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
           type="button"
           onClick={toggleAccordion}
           className={`flex-1 flex gap-2 md:gap-4 items-center text-left transition-all z-10 ${
-            isExpanded ? 'bg-green-300 hover:bg-green-200' : 'hover:bg-text-200'
+            isexpandedDescription
+              ? 'bg-green-300 hover:bg-green-200'
+              : 'hover:bg-text-200'
           } ${serviceTypeBadge ? 'rounded-r-sm' : 'rounded-sm'} ${
-            !hasContent ? 'pointer-events-none' : ''
+            !hasdescription ? 'pointer-events-none' : ''
           }`}
         >
           <Flex
@@ -91,12 +99,12 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
                 <div className="relative w-5 h-5 md:w-6 md:h-6 shrink-0 basis-auto p-3">
                   <PlusOutlined
                     className={`absolute inset-0 transition-opacity text-lg ${
-                      isExpanded ? 'opacity-0' : 'opacity-70'
+                      isexpandedDescription ? 'opacity-0' : 'opacity-70'
                     }`}
                   />
                   <MinusOutlined
                     className={`absolute inset-0 transition-opacity text-lg  ${
-                      isExpanded ? 'opacity-70' : 'opacity-0'
+                      isexpandedDescription ? 'opacity-70' : 'opacity-0'
                     }`}
                   />
                 </div>
@@ -133,12 +141,12 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
       </header>
 
       <section
-        ref={contentRef}
+        ref={descriptionRef}
         className="origin-top overflow-hidden duration-300 transition-[height,visibility]"
         style={{ height: 0, visibility: 'hidden' }}
       >
         <div className="p-4 pl-4 md:pl-14 rounded-b border border-t-0 border-text-300">
-          {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
+          {description}
         </div>
       </section>
     </article>

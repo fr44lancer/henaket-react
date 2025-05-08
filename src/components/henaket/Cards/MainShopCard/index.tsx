@@ -24,26 +24,31 @@ export const MainShopCard = ({
   ...props
 }: IMainShopCard) => {
   return (
-    <Flex className={'border-t-4 border-t-primary w-[316px] pt-4'}>
+    <Flex className={'border-t-4 border-t-primary w-[316px] pt-4 ' + className}>
       <Flex align={'start'}>
         <div>
           {title && (
-            <AppLink href={'#'} className={'mb-2 text-2xl font-bold'}>
+            <AppLink
+              href={props.href}
+              className={'mb-2 text-2xl font-bold no-underline'}
+            >
               {title}
             </AppLink>
           )}
           {description && (
-            <MainParagraph className={'my-2'}>{description}</MainParagraph>
+            <MainParagraph className={'my-4'}>{description}</MainParagraph>
           )}
 
           {linkDescription && (
-            <AppLink href={'#'} className={'mb-2'}>
-              linkDescription
+            <AppLink href={props.href} className={'mb-2'}>
+              {linkDescription}
             </AppLink>
           )}
         </div>
         <div>
-          <RightOutlined className={'text-primary text-lg mt-2'} />
+          <AppLink href={props.href}>
+            <RightOutlined className={'text-primary text-lg mt-2'} />
+          </AppLink>
         </div>
       </Flex>
     </Flex>
