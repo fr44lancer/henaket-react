@@ -7,35 +7,35 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    './src/stories/**/*.{js,ts,jsx,tsx}',
     '.storybook/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   prefix: '',
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
       sans: ['"Noto Sans"', '"Noto Sans Armenian"', 'Arial'],
-      custom: ['"Noto Sans"', '"Noto Sans Armenian"']
+      custom: ['"Noto Sans"', '"Noto Sans Armenian"'],
     },
 
     extend: {
       screens: {
-        xs: '320px'
+        xs: '320px',
       },
 
       fontSize: {
-        base: ['1rem', '2rem']
+        base: ['1rem', '2rem'],
       },
 
       keyframes: {
         'accessibility-outline-pulse': {
           '0%, 100%': { boxShadow: '0 0 0 3px #BD13B8' },
-          '50%': { boxShadow: '0 0 0 6px #BD13B8' }
-        }
+          '50%': { boxShadow: '0 0 0 6px #BD13B8' },
+        },
       },
 
       animation: {
         'accessibility-outline-pulse':
-          'accessibility-outline-pulse 300ms ease-in-out'
+          'accessibility-outline-pulse 300ms ease-in-out',
       },
 
       boxShadow: {
@@ -43,7 +43,7 @@ module.exports = {
         cardsHover: '0 2px 8px 0 #00000026',
         accessibilityOutline: '0 0 0 3px #BD13B8',
         modalWindow: '0 8px 16px 0 #0000004D',
-        overflowMenu: '0px 4px 8px 0px #0000004d'
+        overflowMenu: '0px 4px 8px 0px #0000004d',
       },
 
       colors: {
@@ -66,7 +66,7 @@ module.exports = {
           900: '#2A4A70',
           1000: '#203754',
           1100: '#152538',
-          1200: '#0B121C'
+          1200: '#0B121C',
         },
 
         green: {
@@ -81,7 +81,7 @@ module.exports = {
           900: '#45928E',
           1000: '#346E6B',
           1100: '#224947',
-          1200: '#112524'
+          1200: '#112524',
         },
 
         gray: {
@@ -96,7 +96,7 @@ module.exports = {
           900: '#242323',
           1000: '#1B1A1A',
           1100: '#121212',
-          1200: '#0E0D0D'
+          1200: '#0E0D0D',
         },
 
         text: {
@@ -107,13 +107,13 @@ module.exports = {
           500: '#999999',
           600: '#747474',
           700: '#454545',
-          800: '#1A1A1A'
+          800: '#1A1A1A',
         },
 
         link: {
           main: '#004D99',
           active: '#000040',
-          visited: '#800080'
+          visited: '#800080',
         },
 
         systemMessage: {
@@ -124,14 +124,14 @@ module.exports = {
           error: '#CC0000',
           errorLight: '#FFE0E0',
           warning: '#FEBB30',
-          warningLight: '#FFEECC'
+          warningLight: '#FFEECC',
         },
 
         button: {
           default: '#167F16',
           hover: '#1B691B',
           active: '#155115',
-          stroke: '#0F420F'
+          stroke: '#0F420F',
         },
 
         visualization: {
@@ -139,69 +139,69 @@ module.exports = {
             main: '#56D4D6',
             high: '#9AE5E6',
             medium: '#CCF2F3',
-            low: '#EEFAFA'
+            low: '#EEFAFA',
           },
 
           teal: {
             main: '#15B094',
             high: '#73D0BF',
             medium: '#B9E7DF',
-            low: '#E7F7F4'
+            low: '#E7F7F4',
           },
 
           magenta: {
             main: '#D81884',
             high: '#E874B5',
             medium: '#F3BADA',
-            low: '#FBE7F2'
+            low: '#FBE7F2',
           },
 
           purple: {
             main: '#8F2B8F',
             high: '#BC80BC',
             medium: '#DDBFDD',
-            low: '#F3E9F3'
+            low: '#F3E9F3',
           },
 
           orange: {
             main: '#FF6A38',
             high: '#FFA688',
             medium: '#FFD2C3',
-            low: '#FFF0EB'
+            low: '#FFF0EB',
           },
 
           violet: {
             main: '#474E95',
             high: '#9195BF',
             medium: '#C8CADF',
-            low: '#ECEDF4'
-          }
+            low: '#ECEDF4',
+          },
         },
 
         yesem: {
           primary: '#004FA3',
 
           blue: {
-            600: '#2677CE'
-          }
+            600: '#2677CE',
+          },
         },
 
         background: {
           white: '#FFFFFF',
-          alternative: '#F5F5F580'
-        }
+          alternative: '#F5F5F580',
+        },
       },
 
       spacing: {
         'viewport-standard': '80%',
         'viewport-narrow': '767px',
-        'viewport-mobile': '100%'
+        'viewport-mobile': '100%',
       },
 
       transitionProperty: {
-        'max-height': 'max-height'
-      }
-    }
+        'max-height': 'max-height',
+      },
+    },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')]
-}
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+};

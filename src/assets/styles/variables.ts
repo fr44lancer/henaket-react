@@ -1,27 +1,27 @@
-import theme, { IColorItem } from '@/src/assets/styles/theme'
-import { createGlobalStyle } from 'styled-components'
+import theme, { IColorItem } from '../styles/theme';
+import { createGlobalStyle } from 'styled-components';
 
 function colorVariablesGenerator() {
-  const colorsArr: string[] = Object.keys(theme.colors)
+  const colorsArr: string[] = Object.keys(theme.colors);
 
-  let colorVariable = ''
+  let colorVariable = '';
 
   for (let i = 0; i < colorsArr.length; i++) {
-    let color = colorsArr[i] as IColorItem
-    colorVariable += `--${colorsArr[i]}: ${theme.colors[color]};`
+    let color = colorsArr[i] as IColorItem;
+    colorVariable += `--${colorsArr[i]}: ${theme.colors[color]};`;
   }
 
-  return colorVariable
+  return colorVariable;
 }
 
 const Variables = createGlobalStyle<{ fontFamily: string }>`
   :root {
     //! Fonts
-    --notoSans:${props => props.fontFamily};;
+    --notoSans:${(props) => props.fontFamily};;
   }
 
   ${colorVariablesGenerator()}
 
-`
+`;
 
-export default Variables
+export default Variables;

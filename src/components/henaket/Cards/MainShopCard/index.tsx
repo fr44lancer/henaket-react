@@ -1,18 +1,18 @@
-import React, { ReactNode } from 'react'
-import { LinkProps } from 'next/link'
-import { Flex } from 'antd'
-import { AppLink } from '@/src/components/henaket/AppLink'
-import { RightOutlined } from '@ant-design/icons'
-import { MainParagraph } from '@/src/components/henaket/Typography/Paragraphs/MainParagraph'
+import React, { ReactNode } from 'react';
+import { LinkProps } from 'next/link';
+import { Flex } from 'antd';
+import { AppLink } from '../../../henaket/AppLink';
+import { RightOutlined } from '@ant-design/icons';
+import { MainParagraph } from '../../../henaket/Typography/Paragraphs/MainParagraph';
 
 export type IMainShopCard = {
-  children?: ReactNode
-  className?: string
-  title?: string
-  description?: string
-  linkDescription?: string
-  type?: 'default' | 'footer' | 'light' | 'disabled'
-} & LinkProps
+  children?: ReactNode;
+  className?: string;
+  title?: string;
+  description?: string;
+  linkDescription?: string;
+  type?: 'default' | 'footer' | 'light' | 'disabled';
+} & LinkProps;
 
 export const MainShopCard = ({
   children,
@@ -47,5 +47,5 @@ export const MainShopCard = ({
         </div>
       </Flex>
     </Flex>
-  )
-}
+  );
+};

@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
-import { AppFeedback, AppFeedbackForm, AppFeedbackThankYou } from '@/src/components/henaket/AppFeedback';
+import {
+  AppFeedback,
+  AppFeedbackForm,
+  AppFeedbackThankYou,
+} from '../components/henaket/AppFeedback';
 
 const meta: Meta<typeof AppFeedback> = {
   title: 'Henaket/Feedback',
@@ -70,7 +74,13 @@ export const RateText: Story = {
 };
 
 export const WithReportButton: Story = {
-  render: () => <AppFeedback type="useful-yesno" onFeedback={() => {}} onReportProblem={() => alert('Report!')} />,
+  render: () => (
+    <AppFeedback
+      type="useful-yesno"
+      onFeedback={() => {}}
+      onReportProblem={() => alert('Report!')}
+    />
+  ),
 };
 
 export const FeedbackForm: Story = {
@@ -79,11 +89,14 @@ export const FeedbackForm: Story = {
     return sent ? (
       <AppFeedbackThankYou />
     ) : (
-      <AppFeedbackForm onSend={() => setSent(true)} onCancel={() => setSent(true)} />
+      <AppFeedbackForm
+        onSend={() => setSent(true)}
+        onCancel={() => setSent(true)}
+      />
     );
   },
 };
 
 export const ThankYou: Story = {
   render: () => <AppFeedbackThankYou message="Thank you for your feedback!" />,
-}; 
+};

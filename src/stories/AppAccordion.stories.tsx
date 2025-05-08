@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { AppAccordion } from '@/src/components/henaket/Accordion'
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppAccordion } from '../components/henaket/Accordion';
 
 const meta = {
   title: 'Henaket/Accordion',
   component: AppAccordion,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
   },
   args: {
     title: 'Example Accordion Title',
     content:
       '<p>This is example <strong>accordion content</strong> with HTML.</p>',
-    expanded: false
+    expanded: false,
   },
   argTypes: {
     title: { control: 'text' },
@@ -20,28 +20,28 @@ const meta = {
     expanded: { control: 'boolean' },
     actionVariant: {
       control: 'select',
-      options: ['primary', 'secondary', 'outlined']
+      options: ['primary', 'secondary', 'outlined'],
     },
     actionButtonIcon: { control: 'text' },
     actionButtonLink: {
       control: 'object',
-      description: 'Link button shown to the right of the accordion'
+      description: 'Link button shown to the right of the accordion',
     },
     serviceTypeBadge: {
       control: 'object',
-      description: 'Optional label before the accordion header'
+      description: 'Optional label before the accordion header',
     },
     onToggle: {
       action: 'toggled',
-      description: 'Callback triggered on expand/collapse'
-    }
-  }
-} satisfies Meta<typeof AppAccordion>
+      description: 'Callback triggered on expand/collapse',
+    },
+  },
+} satisfies Meta<typeof AppAccordion>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {}
+export const Default: Story = {};
 
 export const WithBadgeOnly: Story = {
   args: {
@@ -49,29 +49,29 @@ export const WithBadgeOnly: Story = {
     serviceTypeBadge: {
       name: 'Beta',
       background_color: '#EEE',
-      text_color: '#333'
-    }
-  }
-}
+      text_color: '#333',
+    },
+  },
+};
 
 export const WithoutContent: Story = {
   args: {
-    content: ''
-  }
-}
+    content: '',
+  },
+};
 
 export const ExpandedByDefault: Story = {
   args: {
-    expanded: true
-  }
-}
+    expanded: true,
+  },
+};
 
 export const WithCustomActionIcon: Story = {
   args: {
     actionButtonIcon: 'arrow_forward',
     actionButtonLink: {
       href: '/learn-more',
-      display_text: 'Learn More'
-    }
-  }
-}
+      display_text: 'Learn More',
+    },
+  },
+};

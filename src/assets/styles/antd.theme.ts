@@ -1,5 +1,5 @@
 import { ThemeConfig } from 'antd'
-import theme from '@/src/assets/styles/theme'
+import theme from '../styles/theme'
 
 const antdTheme: ThemeConfig = {
   token: {
@@ -419,11 +419,8 @@ const antdTheme: ThemeConfig = {
       cellPaddingInlineSM: 8,
       filterDropdownBg: theme.colors.backgroundWhite,
       filterDropdownMenuBg: theme.colors.backgroundWhite,
-      filterDropdownMenuItemSelectedBg: theme.colors.blue100,
-      filterDropdownMenuItemSelectedColor: theme.colors.primary,
       expandIconBg: theme.colors.backgroundWhite,
       selectionColumnWidth: 32,
-      stickyHeaderBg: theme.colors.backgroundWhite,
       stickyScrollBarBg: theme.colors.blue400,
       stickyScrollBarBorderRadius: 4,
     },

@@ -1,16 +1,16 @@
 'use client'
 
 import React, { useState } from 'react'
-import { AppButton } from '@/src/components/henaket/AppButton'
-import { AppIcon } from '@/src/components/henaket/AppIcon'
-import { AppInput } from '@/src/components/henaket/AppInput'
-import { AppLabel } from '@/src/components/henaket/AppLabel'
-import { AppAlert } from '@/src/components/henaket/AppAlert'
-import { AppAccordion } from '@/src/components/henaket/Accordion'
-import { AppAccordionGroup } from '@/src/components/henaket/AppAccordionGroup'
+import { AppButton } from '../../henaket/AppButton'
+import { AppIcon } from '../../henaket/AppIcon'
+import { AppInput } from '../../henaket/AppInput'
+import { AppLabel } from '../../henaket/AppLabel'
+import { AppAlert } from '../../henaket/AppAlert'
+import { AppAccordion } from '../../henaket/Accordion'
+import { AppAccordionGroup } from '../../henaket/AppAccordionGroup'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import { Col, Row, Segmented, Space } from 'antd'
-import { AppTable } from '@/src/components/henaket/AppTable'
+import { AppTable } from '../../henaket/AppTable'
 
 const accordionItems = [
   {

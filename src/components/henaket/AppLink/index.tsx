@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import NextLink, { LinkProps } from 'next/link'
-import {AppIcon} from '@/src/components/henaket/AppIcon'
+import {AppIcon} from "../AppIcon";
 
 export type IAppLinkProps = {
   children?: ReactNode

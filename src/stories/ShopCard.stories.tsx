@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ShopCard, ShopCardProps } from '../components/henaket/ShopCard';
-import { MessageOutlined, ShopOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { ShopCard } from '../components/henaket/Cards/ShopCard';
+import {
+  InfoCircleOutlined,
+  MessageOutlined,
+  ShopOutlined,
+} from '@ant-design/icons';
 
 const meta: Meta<typeof ShopCard> = {
   title: 'Henaket/Cards/ShopCard',
@@ -20,17 +24,30 @@ export default meta;
 type Story = StoryObj<typeof ShopCard>;
 
 const sampleLinks = [
-  { text: 'This is a text area where you can write whatever you want.', href: '#' },
-  { text: 'This is a text area where you can write whatever you want.', href: '#' },
-  { text: 'This is a text area where you can write whatever you want.', href: '#' },
-  { text: 'This is a text area where you can write whatever you want.', href: '#' },
+  {
+    text: 'This is a text area where you can write whatever you want.',
+    href: '#',
+  },
+  {
+    text: 'This is a text area where you can write whatever you want.',
+    href: '#',
+  },
+  {
+    text: 'This is a text area where you can write whatever you want.',
+    href: '#',
+  },
+  {
+    text: 'This is a text area where you can write whatever you want.',
+    href: '#',
+  },
 ];
 
 export const Default: Story = {
   args: {
     icon: <MessageOutlined />,
     title: 'Header',
-    description: 'Supportive text for explaining the window card. Maximum 2 rows',
+    description:
+      'Supportive text for explaining the window card. Maximum 2 rows',
     links: sampleLinks,
   },
 };
@@ -71,7 +88,8 @@ export const ServicesSection: Story = {
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-blue-900 mb-1">Services</h2>
         <p className="text-gray-700 text-base max-w-2xl">
-          A maximum 3 line statement to summarise the activity or policy goal of the ministry.
+          A maximum 3 line statement to summarise the activity or policy goal of
+          the ministry.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,4 +123,4 @@ export const ServicesSection: Story = {
       </div>
     </div>
   ),
-}; 
+};

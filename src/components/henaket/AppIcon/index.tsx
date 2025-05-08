@@ -9,8 +9,8 @@ interface AppIconProps extends React.HTMLAttributes<HTMLSpanElement> {
 export const AppIcon: React.FC<AppIconProps> = ({ icon, size = '1em' }) => {
   return (
     <span
-      className={classNames('app-icon', 'select-none')}
-      data-icon-name={icon}
+        className="app-icon select-none"
+        data-icon-name={icon}
       style={{ fontSize: size }}
     />
   )

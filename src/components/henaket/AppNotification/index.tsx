@@ -1,3 +1,4 @@
+import React from 'react'
 import { notification } from 'antd'
 import {
   CheckCircleOutlined,
@@ -5,7 +6,7 @@ import {
   InfoCircleOutlined,
   WarningOutlined
 } from '@ant-design/icons'
-import theme from '@/src/assets/styles/theme'
+import theme from '../../../assets/styles/theme'
 
 const configMap = {
   success: {

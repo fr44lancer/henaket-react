@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import theme from '@/src/assets/styles/theme';
-import { AppButton } from '@/src/components/henaket/AppButton';
-import { AppIcon } from '@/src/components/henaket/AppIcon';
+import { AppButton } from '../../henaket/AppButton';
+import { AppIcon } from '../../henaket/AppIcon';
 import { twMerge } from 'tailwind-merge';
 
 export type FeedbackType =
@@ -218,10 +217,10 @@ export const AppFeedbackForm: React.FC<AppFeedbackFormProps> = ({
       />
       {error && <div className="text-red-600 text-xs mb-2">{error}</div>}
       <div className="flex gap-2 mt-2">
-        <AppButton type="button" variant="outlined" color="default" onClick={onCancel}>
+        <AppButton type="dashed" variant="outlined" color="default" onClick={onCancel}>
           Cancel
         </AppButton>
-        <AppButton type="submit" variant="solid" color="primary" loading={loading}>
+        <AppButton type="primary" variant="solid" color="primary" loading={loading}>
           Send
         </AppButton>
       </div>

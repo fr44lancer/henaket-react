@@ -1,0 +1,1 @@
+export { MainShopCard } from './MainShopCard';

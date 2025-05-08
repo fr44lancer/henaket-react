@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { AppTooltip } from '@/src/components/henaket/AppTooltip'
-import { AppButton } from '@/src/components/henaket/AppButton'
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppTooltip } from '../components/henaket/AppTooltip';
+import { AppButton } from '../components/henaket/AppButton';
 
 const meta = {
   title: 'Henaket/Tooltip',
@@ -11,7 +11,7 @@ const meta = {
     title: 'Tooltip Content',
     placement: 'top',
     trigger: 'hover',
-    arrow: true
+    arrow: true,
   },
   argTypes: {
     title: { control: 'text' },
@@ -29,27 +29,27 @@ const meta = {
         'leftTop',
         'leftBottom',
         'rightTop',
-        'rightBottom'
-      ]
+        'rightBottom',
+      ],
     },
     trigger: {
       control: 'select',
-      options: ['hover', 'focus', 'click', 'contextMenu']
+      options: ['hover', 'focus', 'click', 'contextMenu'],
     },
     arrow: {
-      control: 'boolean'
-    }
+      control: 'boolean',
+    },
   },
   parameters: {
-    layout: 'centered'
-  }
-} satisfies Meta<typeof AppTooltip>
+    layout: 'centered',
+  },
+} satisfies Meta<typeof AppTooltip>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <AppTooltip
       {...args}
       defaultOpen={true}
@@ -57,5 +57,5 @@ export const Default: Story = {
     >
       <AppButton type={'primary'}>Hover Me</AppButton>
     </AppTooltip>
-  )
-}
+  ),
+};

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AppTable } from '@/src/components/henaket/AppTable';
+import { AppTable } from '../components/henaket//AppTable';
 import { useState } from 'react';
 
 const meta: Meta<typeof AppTable> = {
@@ -115,4 +115,4 @@ export const WithLoading: Story = {
     columns,
     loading: true,
   },
-}; 
+};

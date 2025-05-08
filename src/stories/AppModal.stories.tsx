@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { AppModal } from '@/src/components/henaket/AppModal'
-import { AppButton } from '@/src/components/henaket/AppButton'
-import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppModal } from '../components/henaket/AppModal';
+import { AppButton } from '../components/henaket/AppButton';
+import React from 'react';
 
 const meta = {
   title: 'Henaket/Modal',
   component: AppModal,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
   },
   args: {
     open: true,
@@ -32,35 +32,35 @@ const meta = {
       <AppButton variant="solid" color="primary">
         Հիմնական
       </AppButton>
-    )
+    ),
   },
   argTypes: {
     open: {
       control: 'boolean',
-      description: 'Whether the modal is visible'
+      description: 'Whether the modal is visible',
     },
     title: {
-      control: 'text'
+      control: 'text',
     },
     children: {
       control: false,
-      description: 'Modal content'
+      description: 'Modal content',
     },
     okButton: {
-      control: false
+      control: false,
     },
     cancelButton: {
-      control: false
+      control: false,
     },
     onOk: { action: 'confirmed' },
-    onCancel: { action: 'cancelled' }
-  }
-} satisfies Meta<typeof AppModal>
+    onCancel: { action: 'cancelled' },
+  },
+} satisfies Meta<typeof AppModal>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {}
+export const Default: Story = {};
 
 export const WithCustomContent: Story = {
   args: {
@@ -69,16 +69,16 @@ export const WithCustomContent: Story = {
         <h4 className="mb-2">Are you sure you want to proceed?</h4>
         <p className="text-sm text-gray-600">This action cannot be undone.</p>
       </div>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const WithoutButtons: Story = {
   args: {
     okButton: null,
-    cancelButton: null
-  }
-}
+    cancelButton: null,
+  },
+};
 
 export const CustomFooter: Story = {
   args: {
@@ -91,6 +91,6 @@ export const CustomFooter: Story = {
       <AppButton variant="text" color="danger">
         No
       </AppButton>
-    )
-  }
-}
+    ),
+  },
+};

@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { AppPopover } from '@/src/components/henaket/AppPopover'
-import { AppButton } from '@/src/components/henaket/AppButton'
-import { MainParagraph } from '@/src/components/henaket/Typography/Paragraphs/MainParagraph'
-import { AppLink } from '@/src/components/henaket/AppLink'
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppPopover } from '../components/henaket/AppPopover';
+import { AppButton } from '../components/henaket/AppButton';
+import { MainParagraph } from '../components/henaket/Typography/Paragraphs/MainParagraph';
+import { AppLink } from '../components/henaket/AppLink';
 
 const meta = {
   title: 'Henaket/Popover',
@@ -11,14 +11,14 @@ const meta = {
     title: 'Popover Title',
     content: 'This is the content of the popover.',
     trigger: 'click',
-    placement: 'top'
+    placement: 'top',
   },
   argTypes: {
     title: { control: 'text' },
     content: { control: 'text' },
     trigger: {
       control: 'select',
-      options: ['hover', 'click', 'focus', 'contextMenu']
+      options: ['hover', 'click', 'focus', 'contextMenu'],
     },
     placement: {
       control: 'select',
@@ -34,24 +34,24 @@ const meta = {
         'leftTop',
         'leftBottom',
         'rightTop',
-        'rightBottom'
-      ]
-    }
+        'rightBottom',
+      ],
+    },
   },
   parameters: {
-    layout: 'centered'
-  }
-} satisfies Meta<typeof AppPopover>
+    layout: 'centered',
+  },
+} satisfies Meta<typeof AppPopover>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <AppPopover {...args} defaultOpen={true}>
       <AppButton>Click Me</AppButton>
     </AppPopover>
-  )
-}
+  ),
+};
 
 export const WithJSXContent: Story = {
   args: {
@@ -72,11 +72,11 @@ export const WithJSXContent: Story = {
           Կոճակ
         </AppButton>
       </div>
-    )
+    ),
   },
-  render: args => (
+  render: (args) => (
     <AppPopover {...args} className={'max-w-[320px]'}>
       <AppButton type={'primary'}>Click Me</AppButton>
     </AppPopover>
-  )
-}
+  ),
+};

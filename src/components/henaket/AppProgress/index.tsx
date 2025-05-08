@@ -1,6 +1,6 @@
 import React from 'react'
 import { Progress, ProgressProps } from 'antd'
-import theme from '@/src/assets/styles/theme'
+import theme from '../../../assets/styles/theme'
 
 export interface IAppProgress extends ProgressProps {}
 

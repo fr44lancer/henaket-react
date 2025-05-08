@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { AppAlert } from '@/src/components/henaket/AppAlert'
-import { fn } from '@storybook/test'
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppAlert } from '../components/henaket/AppAlert';
+import { fn } from '@storybook/test';
 
 const meta = {
   title: 'Henaket/Alert',
   component: AppAlert,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
   },
   args: {
     message: 'Alert Title',
@@ -16,60 +16,61 @@ const meta = {
     showIcon: true,
     closable: false,
     banner: false,
-    onClose: fn()
+    onClose: fn(),
   },
   argTypes: {
     type: {
       control: { type: 'select' },
-      options: ['success', 'info', 'warning', 'error']
+      options: ['success', 'info', 'warning', 'error'],
     },
     banner: {
-      control: 'boolean'
+      control: 'boolean',
     },
     showIcon: {
-      control: 'boolean'
+      control: 'boolean',
     },
     closable: {
-      control: 'boolean'
-    }
-  }
-} satisfies Meta<typeof AppAlert>
+      control: 'boolean',
+    },
+  },
+} satisfies Meta<typeof AppAlert>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Success: Story = {
   args: {
     type: 'success',
     message: 'Success Tips',
-    description: 'Detailed description and advice about successful copywriting.'
-  }
-}
+    description:
+      'Detailed description and advice about successful copywriting.',
+  },
+};
 
 export const Info: Story = {
   args: {
     type: 'info',
     message: 'Informational Notes',
-    description: 'Additional description and information about copywriting.'
-  }
-}
+    description: 'Additional description and information about copywriting.',
+  },
+};
 
 export const Warning: Story = {
   args: {
     type: 'warning',
     message: 'Warning',
     description: 'This is a warning notice about copywriting.',
-    closable: true
-  }
-}
+    closable: true,
+  },
+};
 
 export const Error: Story = {
   args: {
     type: 'error',
     message: 'Error',
-    description: 'This is an error message about copywriting.'
-  }
-}
+    description: 'This is an error message about copywriting.',
+  },
+};
 
 export const Banners: Story = {
   render: () => (
@@ -108,5 +109,5 @@ export const Banners: Story = {
         banner
       />
     </>
-  )
-}
+  ),
+};

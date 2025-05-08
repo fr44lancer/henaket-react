@@ -1,6 +1,6 @@
 import React from 'react'
 import { Collapse } from 'antd'
-import AppIcon from '@/src/components/ui/Icon'
+import {AppIcon} from "../../henaket/AppIcon";
 
 const { Panel } = Collapse
 
@@ -26,7 +26,7 @@ export const AppAccordionGroup: React.FC<AppAccordionGroupProps> = ({
       accordion={accordion}
       defaultActiveKey={defaultActiveKey}
       expandIcon={({ isActive }) => (
-        <AppIcon icon={isActive ? 'remove' : 'add'} size={20} />
+        <AppIcon icon={isActive ? 'remove' : 'add'} size={'20px'} />
       )}
       className="bg-white border border-gray-200 rounded min-w-viewport-standard"
     >

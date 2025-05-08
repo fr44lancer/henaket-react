@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Input } from 'antd'
-import classNames from 'classnames'
 
 type ValidationResult = string | boolean
 type ValidationRule =
@@ -66,10 +65,10 @@ export const AppInput: React.FC<AppInputProps> = ({
     <div className="app-input-field flex">
       {/* Error indicator stripe */}
       <div
-        className={classNames(
-          'shrink-0 bg-systemMessage-error transition-[width,margin] duration-300',
-          errorMessage ? 'w-1 mr-4' : 'w-0 mr-0'
-        )}
+          className={`shrink-0 bg-systemMessage-error transition-[width,margin] duration-300 ${
+              errorMessage ? 'w-1 mr-4' : 'w-0 mr-0'
+          }`}
+
       />
 
       <label className="w-full flex flex-col gap-1">
@@ -81,17 +80,17 @@ export const AppInput: React.FC<AppInputProps> = ({
         )}
 
         <div
-          className={classNames(
-            'app-input-field-content flex border rounded overflow-hidden',
-            errorMessage ? 'border-systemMessage-error' : 'border-black'
-          )}
+            className={`app-input-field-content flex border rounded overflow-hidden ${
+                errorMessage ? 'border-systemMessage-error' : 'border-black'
+            }`}
+
         >
           {prefix && (
             <div
-              className={classNames(
-                'px-3 py-2 shrink-0 border-r bg-text-200 flex items-center rounded-s-[3px]',
-                errorMessage ? 'border-systemMessage-error' : 'border-black'
-              )}
+                className={`px-3 py-2 shrink-0 border-r bg-text-200 flex items-center rounded-s-[3px] ${
+                    errorMessage ? 'border-systemMessage-error' : 'border-black'
+                }`}
+
             >
               {prefix}
             </div>
@@ -103,18 +102,16 @@ export const AppInput: React.FC<AppInputProps> = ({
             value={inputValue}
             onChange={handleInput}
             onBlur={handleBlur}
-            className={classNames(
-              'border-none shadow-none p-2 w-full',
-              'focus:outline-none focus:ring-0'
-            )}
+            className="border-none shadow-none p-2 w-full focus:outline-none focus:ring-0"
+
           />
 
           {postfix && (
             <div
-              className={classNames(
-                'px-3 py-2 shrink-0 border-l bg-text-200 flex items-center rounded-e-[3px]',
-                errorMessage ? 'border-systemMessage-error' : 'border-black'
-              )}
+                className={`px-3 py-2 shrink-0 border-l bg-text-200 flex items-center rounded-e-[3px] ${
+                    errorMessage ? 'border-systemMessage-error' : 'border-black'
+                }`}
+
             >
               {postfix}
             </div>

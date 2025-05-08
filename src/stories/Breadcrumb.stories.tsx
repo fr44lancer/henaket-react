@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AppBreadcrumb, AppBreadcrumbProps } from '@/src/components/henaket/AppBreadcrumb';
+import { AppBreadcrumb } from '../components/henaket/AppBreadcrumb';
 
 const meta: Meta<typeof AppBreadcrumb> = {
   title: 'Henaket/Breadcrumb',
@@ -26,9 +26,7 @@ export const Default: Story = {
 
 export const OnlyOne: Story = {
   args: {
-    items: [
-      { title: 'Only One Item' },
-    ],
+    items: [{ title: 'Only One Item' }],
   },
 };
 
@@ -41,4 +39,4 @@ export const AllLinks: Story = {
       { title: 'Final', href: '/section/sub/final' },
     ],
   },
-}; 
+};

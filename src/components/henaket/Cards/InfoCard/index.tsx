@@ -1,7 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export interface AppCardProps {
+export interface InfoCardProps {
   label?: string;
   image?: string;
   icon?: React.ReactNode;
@@ -12,7 +12,7 @@ export interface AppCardProps {
   className?: string;
 }
 
-export const AppCard: React.FC<AppCardProps> = ({
+export const InfoCard: React.FC<InfoCardProps> = ({
   label,
   image,
   icon,
@@ -26,7 +26,7 @@ export const AppCard: React.FC<AppCardProps> = ({
     <div
       className={twMerge(
         'rounded-lg border border-gray-200 bg-white shadow-sm p-4 flex flex-col min-w-[220px] max-w-[260px]',
-        className
+        className,
       )}
     >
       {label && (
@@ -37,7 +37,11 @@ export const AppCard: React.FC<AppCardProps> = ({
         </div>
       )}
       {image && variant === 'withImage' && (
-        <img src={image} alt="card" className="w-full h-28 object-cover rounded mb-2" />
+        <img
+          src={image}
+          alt="card"
+          className="w-full h-28 object-cover rounded mb-2"
+        />
       )}
       <div className="flex-1 flex flex-col justify-between">
         <div>
@@ -55,4 +59,4 @@ export const AppCard: React.FC<AppCardProps> = ({
       </div>
     </div>
   );
-}; 
+};

@@ -1,7 +1,10 @@
 import React from 'react';
-import { Breadcrumb as AntBreadcrumb, BreadcrumbProps as AntBreadcrumbProps } from 'antd';
-import theme from '@/src/assets/styles/theme';
-import { AppLink } from '@/src/components/henaket/AppLink';
+import {
+  Breadcrumb as AntBreadcrumb,
+  BreadcrumbProps as AntBreadcrumbProps,
+} from 'antd';
+import theme from '../../../assets/styles/theme';
+import { AppLink } from '../../henaket//AppLink';
 import { twMerge } from 'tailwind-merge';
 
 export interface AppBreadcrumbItem {
@@ -14,7 +17,11 @@ export interface AppBreadcrumbProps extends Omit<AntBreadcrumbProps, 'items'> {
   className?: string;
 }
 
-export const AppBreadcrumb: React.FC<AppBreadcrumbProps> = ({ items, className, ...props }) => {
+export const AppBreadcrumb: React.FC<AppBreadcrumbProps> = ({
+  items,
+  className,
+  ...props
+}) => {
   return (
     <AntBreadcrumb
       separator={<span className="mx-2 text-gray-400">&gt;</span>}
@@ -42,7 +49,7 @@ export const AppBreadcrumb: React.FC<AppBreadcrumbProps> = ({ items, className, 
                 isLast
                   ? 'text-blue-700 underline underline-offset-4 decoration-2 font-medium'
                   : 'text-gray-800',
-                'cursor-default'
+                'cursor-default',
               )}
               style={isLast ? { color: theme.colors.linkMain } : {}}
             >
@@ -53,4 +60,4 @@ export const AppBreadcrumb: React.FC<AppBreadcrumbProps> = ({ items, className, 
       })}
     </AntBreadcrumb>
   );
-}; 
+};

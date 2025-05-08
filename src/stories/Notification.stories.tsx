@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { AppButton } from '@/src/components/henaket/AppButton'
-import { notification, Space } from 'antd'
-import { SmileOutlined } from '@ant-design/icons'
-import { showCustomNotification } from '@/src/components/henaket/AppNotification'
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppButton } from '../components/henaket/AppButton';
+import { notification, Space } from 'antd';
+import { SmileOutlined } from '@ant-design/icons';
+import { showCustomNotification } from '../components/henaket/AppNotification';
 
 const meta = {
   title: 'Henaket/Notification',
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
   },
-  tags: ['autodocs']
-} satisfies Meta
+  tags: ['autodocs'],
+} satisfies Meta;
 
-export default meta
-type Story = StoryObj
+export default meta;
+type Story = StoryObj;
 
 export const Basic: Story = {
   render: () => (
@@ -23,14 +23,14 @@ export const Basic: Story = {
         showCustomNotification(
           'success',
           'Հաջողություն',
-          'Ձեր դիմումը ուղարկվել է'
+          'Ձեր դիմումը ուղարկվել է',
         )
       }
     >
       Հաջողություն
     </AppButton>
-  )
-}
+  ),
+};
 
 export const DefaultTypes: Story = {
   render: () => (
@@ -41,7 +41,7 @@ export const DefaultTypes: Story = {
           showCustomNotification(
             'success',
             'Հաջողություն',
-            'Ձեր դիմումը ուղարկվել է'
+            'Ձեր դիմումը ուղարկվել է',
           )
         }
       >
@@ -69,15 +69,15 @@ export const DefaultTypes: Story = {
           showCustomNotification(
             'info',
             'Տեղեկություն',
-            'Ձեր գրանցումը հաջողվեց'
+            'Ձեր գրանցումը հաջողվեց',
           )
         }
       >
         Տեղեկություն
       </AppButton>
     </Space>
-  )
-}
+  ),
+};
 
 export const CustomIcon: Story = {
   render: () => (
@@ -86,11 +86,11 @@ export const CustomIcon: Story = {
         notification.open({
           message: 'Custom Icon',
           description: 'This notification uses a smile icon.',
-          icon: <SmileOutlined style={{ color: '#108ee9' }} />
+          icon: <SmileOutlined style={{ color: '#108ee9' }} />,
         })
       }
     >
       Notification with Custom Icon
     </AppButton>
-  )
-}
+  ),
+};

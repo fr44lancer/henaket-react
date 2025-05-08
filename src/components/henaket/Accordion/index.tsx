@@ -1,23 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react'
-import classNames from 'classnames'
-import { AppLabel } from '@/src/components/henaket/AppLabel'
-import { Flex } from 'antd'
-import {AppIcon} from "@/src/components/henaket/AppIcon";
+import React, { useEffect, useRef, useState } from 'react';
+import { AppLabel } from '../../henaket/AppLabel';
+import { Flex } from 'antd';
+import { AppIcon } from '../../henaket/AppIcon';
+import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 
 interface AppAccordionProps {
-  title: string
-  content?: string
-  anchor?: string
-  actionVariant?: 'primary' | 'default' | 'link' | 'text' | 'dashed'
-  actionButtonLink?: { href: string; display_text: string }
-  actionButtonIcon?: string
-  expanded?: boolean
-  onToggle?: (expanded: boolean) => void
+  title: string;
+  content?: string;
+  anchor?: string;
+  actionVariant?: 'primary' | 'default' | 'link' | 'text' | 'dashed';
+  actionButtonLink?: { href: string; display_text: string };
+  actionButtonIcon?: string;
+  expanded?: boolean;
+  onToggle?: (expanded: boolean) => void;
   serviceTypeBadge?: {
-    background_color: string
-    text_color: string
-    name: string
-  }
+    background_color: string;
+    text_color: string;
+    name: string;
+  };
 }
 
 export const AppAccordion: React.FC<AppAccordionProps> = ({
@@ -29,34 +29,34 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
   actionButtonIcon = 'keyboard_arrow_right',
   expanded: defaultExpanded = false,
   onToggle,
-  serviceTypeBadge
+  serviceTypeBadge,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(defaultExpanded)
-  const contentRef = useRef<HTMLDivElement>(null)
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  const hasContent = !!content
+  const hasContent = !!content;
 
   useEffect(() => {
-    if (!contentRef.current) return
+    if (!contentRef.current) return;
 
-    const el = contentRef.current
+    const el = contentRef.current;
     if (isExpanded) {
-      el.style.height = el.scrollHeight + 'px'
-      el.style.visibility = 'visible'
+      el.style.height = el.scrollHeight + 'px';
+      el.style.visibility = 'visible';
     } else {
-      el.style.height = '0'
-      el.style.visibility = 'hidden'
+      el.style.height = '0';
+      el.style.visibility = 'hidden';
     }
-  }, [isExpanded])
+  }, [isExpanded]);
 
   const toggleAccordion = () => {
-    if (!hasContent) return
-    const next = !isExpanded
-    setIsExpanded(next)
-    onToggle?.(next)
-  }
+    if (!hasContent) return;
+    const next = !isExpanded;
+    setIsExpanded(next);
+    onToggle?.(next);
+  };
 
-  const showAccordionStatusIndicator = hasContent || !serviceTypeBadge
+  const showAccordionStatusIndicator = hasContent || !serviceTypeBadge;
 
   return (
     <article
@@ -64,10 +64,9 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
       className="app-accordion w-full flex flex-col bg-white"
     >
       <header
-        className={classNames(
-          'w-full flex border border-text-300 rounded-[3px]',
-          isExpanded && 'rounded-b-none'
-        )}
+        className={`w-full flex border border-text-300 rounded-[3px] ${
+          isExpanded ? 'rounded-b-none' : ''
+        }`}
       >
         {serviceTypeBadge && (
           <div className="bg-primary rounded-l-sm basis-2" />
@@ -76,14 +75,11 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
         <button
           type="button"
           onClick={toggleAccordion}
-          className={classNames(
-            'flex-1 flex gap-2 md:gap-4   items-center text-left transition-all z-10',
-            isExpanded
-              ? ' bg-green-300 hover:bg-green-200'
-              : 'hover:bg-text-200',
-            serviceTypeBadge ? 'rounded-r-sm' : 'rounded-sm',
-            !hasContent && 'pointer-events-none'
-          )}
+          className={`flex-1 flex gap-2 md:gap-4 items-center text-left transition-all z-10 ${
+            isExpanded ? 'bg-green-300 hover:bg-green-200' : 'hover:bg-text-200'
+          } ${serviceTypeBadge ? 'rounded-r-sm' : 'rounded-sm'} ${
+            !hasContent ? 'pointer-events-none' : ''
+          }`}
         >
           <Flex
             align={'center'}
@@ -93,19 +89,15 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
             <Flex justify={'start'} align={'center'} gap={16} className={'p-3'}>
               {showAccordionStatusIndicator && (
                 <div className="relative w-5 h-5 md:w-6 md:h-6 shrink-0 basis-auto p-3">
-                  <AppIcon
-                    icon="add"
-                    className={classNames(
-                      'absolute inset-0 transition-opacity text-xl md:text-2xl',
-                      isExpanded ? 'opacity-0' : 'opacity-100'
-                    )}
+                  <PlusOutlined
+                    className={`absolute inset-0 transition-opacity text-lg ${
+                      isExpanded ? 'opacity-0' : 'opacity-70'
+                    }`}
                   />
-                  <AppIcon
-                    icon="remove"
-                    className={classNames(
-                      'absolute inset-0 transition-opacity text-xl md:text-2xl',
-                      isExpanded ? 'opacity-100' : 'opacity-0'
-                    )}
+                  <MinusOutlined
+                    className={`absolute inset-0 transition-opacity text-lg  ${
+                      isExpanded ? 'opacity-70' : 'opacity-0'
+                    }`}
                   />
                 </div>
               )}
@@ -150,5 +142,5 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
         </div>
       </section>
     </article>
-  )
-}
+  );
+};
